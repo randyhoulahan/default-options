@@ -1,0 +1,56 @@
+{
+  "name": "@houlagins/default-options",
+  "version": "1.0.0",
+  "description": "Default options service",
+  "author": "Randy Houlahan",
+  "homepage": "https://github.com/randyhoulahan/default-options/tree/master#readme",
+  "readme": "https://github.com/randyhoulahan/default-options/tree/master#readme",
+  "license": "MIT",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "unpkg": "dist/browser/index.min.js",
+  "source": "src/index.js",
+  "src": "src/index.js",
+  "umd": "dist/legacy/umd/index.umd.min.js",
+  "web": "dist/browser/index.min.js",
+  "jsnext:main": "dist/esm/index.min.js",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "bugs": {
+    "url": "https://github.com/randyhoulahan/default-options/issues"
+  },
+  "browser": {
+    "./umd": "dist/legacy/umd/index.umd.min.js",
+    "./browser": "dist/browser/index.min.js",
+    "./": "dist/browser/index.min.js"
+  },
+  "exports": {
+    ".": [
+      {
+        "import": "./dist/esm/index.js",
+        "require": "./dist/legacy/cjs/index.common.cjs",
+        "default": "./dist/esm/index.js"
+      },
+      "./dist/legacy/umd/index.umd.min.js"
+    ]
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randyhoulahan/default-options.git"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "DEBUG=true dist-builder",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:e2e:headless": "vue-cli-service test:e2e --headless",
+    "lint": "vue-cli-service lint --fix",
+    "release": "yarn publish --access=public --tag latest"
+  },
+  "devDependencies": {
+    "@houlagins/dist-builder": "~1.0.1",
+    "@vue/cli-plugin-e2e-cypress": "~4.5.0"
+  }
+}
